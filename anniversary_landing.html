@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Jean-Paul & Marie-Paule — 50 ans</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --gold:#d4a84a;
+    --gold-deep:#b8893a;
+    --coral:#e87a5d;
+    --coral-soft:#f2b8a5;
+    --cream:#faf4e8;
+    --cream-deep:#f5ead1;
+    --terra:#c46a4e;
+    --ink:#2d2418;
+    --ink-soft:#6b5d47;
+    --serif:'Playfair Display','Georgia',serif;
+    --script:'Brush Script MT','Lucida Handwriting',cursive;
+    --sans:'Helvetica Neue',Arial,sans-serif;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
+
+  /* DECORATIVE ELEMENTS */
+  .confetti{position:absolute;pointer-events:none;opacity:0.6}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 2.5rem;background:rgba(250,244,232,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(212,168,74,0.2)}
+  .nav-logo{font-family:var(--serif);font-size:1.1rem;color:var(--gold-deep);font-style:italic;text-decoration:none}
+  .nav-links{display:flex;gap:1.75rem;list-style:none}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s}
+  .nav-links a:hover{color:var(--coral)}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:7rem 2rem 4rem;position:relative;text-align:center;background:linear-gradient(180deg,#fff6e0 0%,#faf4e8 60%,#f5ead1 100%);overflow:hidden}
+  .hero-stars{position:absolute;inset:0;pointer-events:none}
+  .star{position:absolute;color:var(--gold);opacity:0.4;font-size:1.25rem}
+  .hero-eyebrow{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--coral);margin-bottom:1rem;letter-spacing:0.05em}
+  .hero-50{font-family:var(--serif);font-size:clamp(7rem,18vw,14rem);font-weight:900;line-height:0.85;color:var(--gold-deep);margin-bottom:0.5rem;position:relative;display:inline-block}
+  .hero-50::before{content:'✨';position:absolute;top:-1rem;left:-3rem;font-size:2rem;opacity:0.8}
+  .hero-50::after{content:'✨';position:absolute;bottom:0;right:-3rem;font-size:2rem;opacity:0.8}
+  .hero-label{font-family:var(--serif);font-size:clamp(1rem,2vw,1.4rem);color:var(--terra);letter-spacing:0.3em;text-transform:uppercase;margin-bottom:2.5rem;font-weight:500}
+  .hero-names{font-family:var(--serif);font-size:clamp(2rem,5vw,4rem);line-height:1.2;color:var(--ink);margin-bottom:1rem}
+  .hero-amp{color:var(--coral);font-style:italic;font-size:0.8em;margin:0 0.3em}
+  .hero-date-wrap{display:inline-flex;align-items:center;gap:1.5rem;padding:0.75rem 2rem;background:#fff;border:2px solid var(--gold);border-radius:999px;margin-top:1.5rem;margin-bottom:2.5rem}
+  .hero-date{font-family:var(--serif);font-size:1.1rem;color:var(--ink);font-weight:500}
+  .hero-dot{width:6px;height:6px;background:var(--coral);border-radius:50%}
+  .hero-subtitle{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink-soft);max-width:500px;line-height:1.7;margin-bottom:3rem}
+
+  /* COUNTDOWN */
+  .countdown{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .count-box{background:#fff;border:2px solid var(--cream-deep);border-radius:12px;padding:1rem 1.5rem;min-width:85px;box-shadow:0 4px 0 var(--cream-deep)}
+  .count-num{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--gold-deep);line-height:1;margin-bottom:0.25rem}
+  .count-label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* SECTION BASE */
+  section{padding:6rem 2rem;position:relative}
+  .section-inner{max-width:1000px;margin:0 auto}
+  .section-eyebrow{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--coral);text-align:center;margin-bottom:0.5rem}
+  .section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--ink);text-align:center;margin-bottom:3rem;line-height:1.2}
+  .divider-heart{text-align:center;margin:2rem auto;color:var(--coral);font-size:1.25rem}
+
+  /* STORY / TIMELINE */
+  .story{background:#fff}
+  .timeline{position:relative;max-width:750px;margin:0 auto}
+  .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold) 0%,var(--coral) 100%);transform:translateX(-50%)}
+  .tl-item{position:relative;padding:1.5rem 0;display:grid;grid-template-columns:1fr 80px 1fr;gap:1.5rem;align-items:center}
+  .tl-year{background:var(--gold-deep);color:#fff;font-family:var(--serif);font-weight:700;font-size:1rem;padding:0.5rem;border-radius:50%;width:70px;height:70px;display:flex;align-items:center;justify-content:center;text-align:center;z-index:2;box-shadow:0 0 0 6px #fff, 0 0 0 8px var(--cream-deep);line-height:1}
+  .tl-item:nth-child(even) .tl-year{background:var(--coral)}
+  .tl-content{background:var(--cream);padding:1.25rem 1.5rem;border-radius:12px;border:1px solid var(--cream-deep)}
+  .tl-item:nth-child(odd) .tl-content:nth-child(1){text-align:right}
+  .tl-item:nth-child(odd) > .tl-content + *{display:none}
+  .tl-item:nth-child(even) .tl-left{visibility:hidden}
+  .tl-title{font-family:var(--serif);font-size:1.1rem;color:var(--ink);margin-bottom:0.35rem;font-weight:500}
+  .tl-text{font-size:0.9rem;color:var(--ink-soft);line-height:1.6}
+
+  /* FETE / EVENT DETAILS */
+  .fete{background:linear-gradient(135deg,#fff6e0 0%,#faf4e8 100%);position:relative}
+  .fete-card{background:#fff;max-width:700px;margin:0 auto;border-radius:20px;padding:3rem;border:3px solid var(--gold);position:relative;box-shadow:0 8px 0 var(--cream-deep)}
+  .fete-card::before{content:'🎊';position:absolute;top:-20px;left:30px;font-size:2.5rem;background:#fff;padding:0 10px;border-radius:50%}
+  .fete-card::after{content:'🥂';position:absolute;top:-20px;right:30px;font-size:2.5rem;background:#fff;padding:0 10px;border-radius:50%}
+  .fete-detail{display:grid;grid-template-columns:140px 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px dashed var(--cream-deep);align-items:baseline}
+  .fete-detail:last-child{border-bottom:none}
+  .fete-label{font-family:var(--serif);font-style:italic;color:var(--coral);font-size:1rem}
+  .fete-value{font-family:var(--serif);font-size:1.15rem;color:var(--ink);line-height:1.5}
+  .fete-value small{display:block;font-family:var(--sans);font-size:0.8rem;color:var(--ink-soft);margin-top:0.25rem;font-style:normal}
+
+  /* RSVP */
+  .rsvp{background:var(--cream)}
+  .rsvp-form{max-width:600px;margin:0 auto;background:#fff;padding:2.5rem;border-radius:16px;border:1px solid var(--cream-deep)}
+  .form-row{margin-bottom:1.25rem}
+  .form-row label{display:block;font-family:var(--serif);font-style:italic;color:var(--coral);font-size:0.95rem;margin-bottom:0.5rem}
+  .form-row input, .form-row select, .form-row textarea{width:100%;padding:0.85rem 1rem;border:2px solid var(--cream-deep);border-radius:8px;font-family:var(--sans);font-size:0.95rem;color:var(--ink);background:var(--cream);transition:border-color 0.3s}
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus{outline:none;border-color:var(--gold)}
+  .form-row textarea{min-height:90px;resize:vertical}
+  .radio-group{display:flex;gap:0.75rem;flex-wrap:wrap}
+  .radio-option{flex:1;min-width:140px;position:relative}
+  .radio-option input{position:absolute;opacity:0}
+  .radio-option label{display:block;padding:0.85rem 1rem;background:var(--cream);border:2px solid var(--cream-deep);border-radius:8px;text-align:center;cursor:pointer;font-style:normal;font-family:var(--sans);color:var(--ink);transition:all 0.3s;margin-bottom:0}
+  .radio-option input:checked + label{background:var(--gold);border-color:var(--gold-deep);color:#fff}
+  .btn-submit{width:100%;padding:1rem;background:var(--coral);color:#fff;border:none;border-radius:8px;font-family:var(--serif);font-size:1.1rem;font-weight:500;cursor:pointer;box-shadow:0 4px 0 var(--terra);transition:transform 0.15s, box-shadow 0.15s;margin-top:1rem}
+  .btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--terra)}
+  .btn-submit:active{transform:translateY(2px);box-shadow:0 2px 0 var(--terra)}
+  .rsvp-success{display:none;padding:2rem;text-align:center;background:var(--cream-deep);border-radius:12px;margin-top:1rem}
+  .rsvp-success.show{display:block}
+  .rsvp-success h3{font-family:var(--serif);color:var(--gold-deep);margin-bottom:0.5rem}
+
+  /* GALERIE */
+  .galerie{background:#fff}
+  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;max-width:900px;margin:0 auto}
+  .photo-slot{aspect-ratio:3/4;background:linear-gradient(135deg,var(--cream-deep),var(--cream));border-radius:12px;display:flex;align-items:center;justify-content:center;border:2px dashed var(--gold);position:relative;overflow:hidden}
+  .photo-slot:nth-child(3n){aspect-ratio:4/3}
+  .photo-slot:nth-child(5n){background:linear-gradient(135deg,var(--coral-soft),var(--cream))}
+  .photo-icon{color:var(--gold-deep);opacity:0.4;font-size:2.5rem}
+  .gallery-note{text-align:center;margin-top:2rem;font-family:var(--serif);font-style:italic;color:var(--ink-soft)}
+
+  /* MUR DES SOUVENIRS */
+  .souvenirs{background:linear-gradient(135deg,#fff6e0 0%,var(--cream) 100%)}
+  .messages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:2.5rem;max-width:900px;margin-left:auto;margin-right:auto}
+  .message-card{background:#fff;padding:1.5rem;border-radius:12px;border:1px solid var(--cream-deep);position:relative;transform:rotate(-1deg);box-shadow:0 4px 12px rgba(212,168,74,0.15)}
+  .message-card:nth-child(even){transform:rotate(1deg);background:#fffbef}
+  .message-card:nth-child(3n){transform:rotate(-0.5deg);background:#fff5e8}
+  .message-text{font-family:var(--serif);font-style:italic;color:var(--ink);line-height:1.6;font-size:0.95rem;margin-bottom:0.75rem}
+  .message-author{font-size:0.85rem;color:var(--coral);font-weight:500}
+  .add-message{max-width:600px;margin:0 auto;background:#fff;padding:2rem;border-radius:16px;border:1px solid var(--cream-deep)}
+  .add-message h3{font-family:var(--serif);color:var(--ink);margin-bottom:1rem;text-align:center;font-weight:400}
+
+  /* INFOS */
+  .infos{background:var(--cream)}
+  .infos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:900px;margin:0 auto}
+  .info-card{background:#fff;padding:2rem;border-radius:16px;border:1px solid var(--cream-deep);text-align:center}
+  .info-icon{font-size:2.25rem;margin-bottom:1rem}
+  .info-card h3{font-family:var(--serif);color:var(--ink);margin-bottom:0.75rem;font-weight:500;font-size:1.1rem}
+  .info-card p{color:var(--ink-soft);line-height:1.6;font-size:0.9rem}
+
+  /* FOOTER */
+  footer{padding:3rem 2rem 2rem;text-align:center;background:var(--ink);color:var(--cream)}
+  .footer-names{font-family:var(--serif);font-size:1.5rem;color:var(--gold);margin-bottom:0.5rem}
+  .footer-heart{color:var(--coral);font-size:1.25rem;margin:0.75rem 0}
+  .footer-text{font-size:0.85rem;color:rgba(250,244,232,0.6);font-style:italic}
+
+  @media(max-width:768px){
+    nav{padding:0.75rem 1rem}
+    .nav-links{display:none}
+    section{padding:4rem 1rem}
+    .fete-card{padding:2rem 1.5rem}
+    .fete-detail{grid-template-columns:1fr;gap:0.25rem;padding:1rem 0}
+    .fete-label{font-size:0.9rem}
+    .timeline::before{left:30px}
+    .tl-item{grid-template-columns:60px 1fr;gap:1rem}
+    .tl-year{width:55px;height:55px;font-size:0.9rem}
+    .tl-item:nth-child(odd) .tl-content:nth-child(1){text-align:left}
+    .tl-item:nth-child(even) .tl-left{display:none}
+    .tl-left{display:none}
+    .count-box{padding:0.75rem 1rem;min-width:70px}
+    .count-num{font-size:1.5rem}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">J-P & M-P · 50 ans</a>
+  <ul class="nav-links">
+    <li><a href="#histoire">Leur histoire</a></li>
+    <li><a href="#fete">La fête</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#souvenirs">Souvenirs</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-stars">
+    <span class="star" style="top:15%;left:10%">✦</span>
+    <span class="star" style="top:25%;left:85%">✦</span>
+    <span class="star" style="top:60%;left:5%">✦</span>
+    <span class="star" style="top:75%;left:90%">✦</span>
+    <span class="star" style="top:40%;left:15%">✧</span>
+    <span class="star" style="top:55%;left:80%">✧</span>
+  </div>
+  <p class="hero-eyebrow">Noces d'Or</p>
+  <div class="hero-50">50</div>
+  <p class="hero-label">ans</p>
+  <h1 class="hero-names">Jean-Paul<span class="hero-amp">&</span>Marie-Paule</h1>
+  <div class="hero-date-wrap">
+    <span class="hero-date">29 juillet 2026</span>
+  </div>
+  <p class="hero-subtitle">Cinquante ans, beaucoup d'amour, un peu d'eau fraîche. Venez fêter ça avec nous.</p>
+  <div class="countdown" id="countdown">
+    <div class="count-box"><div class="count-num" id="days">—</div><div class="count-label">Jours</div></div>
+    <div class="count-box"><div class="count-num" id="hours">—</div><div class="count-label">Heures</div></div>
+    <div class="count-box"><div class="count-num" id="minutes">—</div><div class="count-label">Minutes</div></div>
+    <div class="count-box"><div class="count-num" id="seconds">—</div><div class="count-label">Secondes</div></div>
+  </div>
+</section>
+
+<!-- HISTOIRE -->
+<section class="story" id="histoire">
+  <div class="section-inner">
+    <p class="section-eyebrow">Depuis 1976</p>
+    <h2 class="section-title">Leur histoire</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-content tl-left">
+          <h3 class="tl-title">La rencontre</h3>
+          <p class="tl-text">Leurs chemins se croisent pour la première fois.</p>
+        </div>
+        <div class="tl-year">19??</div>
+        <div></div>
+      </div>
+      <div class="tl-item">
+        <div></div>
+        <div class="tl-year">1976</div>
+        <div class="tl-content">
+          <h3 class="tl-title">Le mariage</h3>
+          <p class="tl-text">Le 19 juin, ils se disent "oui".</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-content tl-left">
+          <h3 class="tl-title">La famille</h3>
+          <p class="tl-text">Des enfants, puis des petits-enfants.</p>
+        </div>
+        <div class="tl-year">Les années</div>
+        <div></div>
+      </div>
+      <div class="tl-item">
+        <div></div>
+        <div class="tl-year">Voyages</div>
+        <div class="tl-content">
+          <h3 class="tl-title">Le monde à deux</h3>
+          <p class="tl-text">De nombreuses aventures, aux quatre coins du monde.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-content tl-left">
+          <h3 class="tl-title">50 ans</h3>
+          <p class="tl-text">Et la fête continue.</p>
+        </div>
+        <div class="tl-year">2026</div>
+        <div></div>
+      </div>
+    </div>
+    <div class="divider-heart">♥ ♥ ♥</div>
+  </div>
+</section>
+
+<!-- FETE -->
+<section class="fete" id="fete">
+  <div class="section-inner">
+    <p class="section-eyebrow">Vous êtes conviés</p>
+    <h2 class="section-title">La célébration</h2>
+    <div class="fete-card">
+      <div class="fete-detail">
+        <span class="fete-label">Quand</span>
+        <span class="fete-value">Mercredi 29 juillet 2026<small>À partir de 11h45</small></span>
+      </div>
+      <div class="fete-detail">
+        <span class="fete-label">Où</span>
+        <span class="fete-value"><a href="https://www.lexamango.fr/" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#d4a84a">Le Xamango</a><small>lexamango.fr</small></span>
+      </div>
+      <div class="fete-detail">
+        <span class="fete-label">Programme</span>
+        <span class="fete-value">Cocktail, dîner & soirée dansante<small>Discours, surprises et beaucoup d'émotion</small></span>
+      </div>
+      <div class="fete-detail">
+        <span class="fete-label">Tenue</span>
+        <span class="fete-value">Chic & élégante<small>Avec une touche dorée pour les noces d'or ✨</small></span>
+      </div>
+      <div class="fete-detail">
+        <span class="fete-label">Cadeaux</span>
+        <span class="fete-value">Pas de cadeaux<small>Votre présence nous suffit</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp" id="rsvp">
+  <div class="section-inner">
+    <p class="section-eyebrow">Merci de répondre avant le 1er mai 2026</p>
+    <h2 class="section-title">Confirmez votre présence</h2>
+    <form class="rsvp-form" name="rsvp" method="POST" data-netlify="true" action="/rsvp-merci">
+      <input type="hidden" name="form-name" value="rsvp"/>
+      <div class="form-row">
+        <label>Votre nom complet</label>
+        <input type="text" name="name" required placeholder="Prénom et nom"/>
+      </div>
+      <div class="form-row">
+        <label>Adresse e-mail</label>
+        <input type="email" name="email" required placeholder="email@exemple.fr"/>
+      </div>
+      <div class="form-row">
+        <label>Serez-vous présent·e ?</label>
+        <div class="radio-group">
+          <div class="radio-option"><input type="radio" name="attending" id="yes" value="oui" required/><label for="yes">Oui, avec plaisir ! 🎉</label></div>
+          <div class="radio-option"><input type="radio" name="attending" id="no" value="non"/><label for="no">Non, avec regret</label></div>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Nombre de personnes</label>
+        <select name="guests">
+          <option>1 personne</option>
+          <option>2 personnes</option>
+          <option>3 personnes</option>
+          <option>4 personnes</option>
+          <option>5 personnes ou plus</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Un petit mot pour Jean-Paul et Marie-Paule ? (optionnel)</label>
+        <textarea name="message" placeholder="Vos souhaits, souvenirs, anecdotes..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Envoyer ma réponse ♥</button>
+    </form>
+    <div class="rsvp-success" id="rsvp-success">
+      <h3>Merci beaucoup !</h3>
+      <p>Votre réponse a bien été enregistrée. Nous avons hâte de célébrer avec vous !</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section class="galerie" id="galerie">
+  <div class="section-inner">
+    <p class="section-eyebrow">Des moments précieux</p>
+    <h2 class="section-title">Galerie de souvenirs</h2>
+
+    <div id="gallery-locked" style="max-width:480px;margin:0 auto;background:#fff;padding:2.5rem 2rem;border-radius:16px;border:2px solid var(--gold);text-align:center">
+      <div style="font-size:2.5rem;margin-bottom:1rem">🔒</div>
+      <h3 style="font-family:var(--serif);color:var(--ink);font-weight:500;margin-bottom:0.75rem">Galerie privée</h3>
+      <p style="color:var(--ink-soft);line-height:1.6;font-size:0.95rem;margin-bottom:1.5rem">Le mot de passe vous a été communiqué avec l'invitation.</p>
+      <form onsubmit="unlockGallery(event)">
+        <div class="form-row" style="margin-bottom:1rem">
+          <input type="password" id="gallery-pwd" required placeholder="Mot de passe" style="text-align:center;letter-spacing:0.1em"/>
+        </div>
+        <button type="submit" class="btn-submit" style="width:auto;padding:0.85rem 2rem">Accéder à la galerie</button>
+        <p id="gallery-error" style="color:var(--coral);font-size:0.85rem;margin-top:1rem;display:none">Mot de passe incorrect</p>
+      </form>
+    </div>
+
+    <div id="gallery-content" style="display:none">
+      <div class="gallery-grid">
+        <div class="photo-slot"><span class="photo-icon">📷</span></div>
+        <div class="photo-slot"><span class="photo-icon">📷</span></div>
+        <div class="photo-slot"><span class="photo-icon">📷</span></div>
+        <div class="photo-slot"><span class="photo-icon">📷</span></div>
+        <div class="photo-slot"><span class="photo-icon">📷</span></div>
+        <div class="photo-slot"><span class="photo-icon">📷</span></div>
+      </div>
+      <p class="gallery-note">Les photos seront ajoutées prochainement ♥</p>
+    </div>
+  </div>
+</section>
+
+<!-- MUR DES SOUVENIRS -->
+<section class="souvenirs" id="souvenirs">
+  <div class="section-inner">
+    <p class="section-eyebrow">Un petit mot ?</p>
+    <h2 class="section-title">Le mur des messages</h2>
+    <div class="messages-grid" id="messages-grid">
+      <div class="message-card">
+        <p class="message-text">"Cinquante ans, et toujours le même regard complice."</p>
+        <p class="message-author">— Les enfants</p>
+      </div>
+      <div class="message-card">
+        <p class="message-text">"Merci pour les repas de famille, les fous rires et tout le reste."</p>
+        <p class="message-author">— Vos petits-enfants</p>
+      </div>
+      <div class="message-card">
+        <p class="message-text">"Un demi-siècle d'amitié, ça se fête."</p>
+        <p class="message-author">— Les amis de toujours</p>
+      </div>
+    </div>
+    <div class="add-message">
+      <h3>Laissez un message</h3>
+      <form name="messages" method="POST" data-netlify="true" onsubmit="addMessage(event)">
+        <input type="hidden" name="form-name" value="messages"/>
+        <div class="form-row">
+          <label>Votre nom</label>
+          <input type="text" id="msg-name" name="msg-name" required placeholder="Votre prénom"/>
+        </div>
+        <div class="form-row">
+          <label>Votre message</label>
+          <textarea id="msg-text" name="msg-text" required placeholder="Un souvenir, un souhait, une anecdote..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Ajouter ♥</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- INFOS PRATIQUES -->
+<section class="infos">
+  <div class="section-inner">
+    <p class="section-eyebrow">Pour préparer votre venue</p>
+    <h2 class="section-title">Infos pratiques</h2>
+    <div class="infos-grid">
+      <div class="info-card">
+        <div class="info-icon">🚗</div>
+        <h3>Se rendre sur place</h3>
+        <p>Parking disponible sur place. Accès facile depuis l'autoroute et transports en commun à proximité.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🏨</div>
+        <h3>Hébergement</h3>
+        <p>Plusieurs hôtels sont disponibles à proximité du lieu de réception. Liste recommandée à venir.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📞</div>
+        <h3>Une question ?</h3>
+        <p>Contactez les enfants pour toute information complémentaire sur la soirée.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-names">Jean-Paul & Marie-Paule</p>
+  <p class="footer-heart">♥</p>
+  <p class="footer-text">1976 — 2026</p>
+</footer>
+
+<script>
+  // COUNTDOWN
+  const target = new Date('2026-07-29T19:00:00').getTime();
+  function updateCountdown() {
+    const now = Date.now();
+    const diff = target - now;
+    if (diff < 0) {
+      document.getElementById('countdown').innerHTML = '<p style="font-family:var(--serif);font-size:1.25rem;color:var(--coral)">Le grand jour est arrivé ! ♥</p>';
+      return;
+    }
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById('days').textContent = d;
+    document.getElementById('hours').textContent = h;
+    document.getElementById('minutes').textContent = m;
+    document.getElementById('seconds').textContent = s;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // RSVP handled natively by Netlify
+
+  // MESSAGES
+  function addMessage(e) {
+    e.preventDefault();
+    const name = document.getElementById('msg-name').value;
+    const text = document.getElementById('msg-text').value;
+    const grid = document.getElementById('messages-grid');
+    const card = document.createElement('div');
+    card.className = 'message-card';
+    card.innerHTML = '<p class="message-text">"' + text + '"</p><p class="message-author">— ' + name + '</p>';
+    grid.insertBefore(card, grid.firstChild);
+    document.getElementById('msg-name').value = '';
+    document.getElementById('msg-text').value = '';
+  }
+  // GALLERY PASSWORD
+  const GALLERY_PASSWORD = 'noces2026';
+  function unlockGallery(e) {
+    e.preventDefault();
+    const pwd = document.getElementById('gallery-pwd').value;
+    if (pwd.toLowerCase() === GALLERY_PASSWORD) {
+      document.getElementById('gallery-locked').style.display = 'none';
+      document.getElementById('gallery-content').style.display = 'block';
+    } else {
+      document.getElementById('gallery-error').style.display = 'block';
+    }
+  }
+</script>
+</body>
+</html>
