@@ -188,7 +188,7 @@
   <p class="hero-label">ans</p>
   <h1 class="hero-names">Jean-Paul<span class="hero-amp">&</span>Marie-Paule</h1>
   <div class="hero-date-wrap">
-    <span class="hero-date">29 juillet 2026</span>
+    <span class="hero-date">31 juillet 2026</span>
   </div>
   <p class="hero-subtitle">Cinquante ans, beaucoup d'amour, un peu d'eau fraîche. Venez fêter ça avec nous.</p>
   <div class="countdown" id="countdown">
@@ -258,11 +258,11 @@
     <div class="fete-card">
       <div class="fete-detail">
         <span class="fete-label">Quand</span>
-        <span class="fete-value">Mercredi 29 juillet 2026<small>À partir de 11h45</small></span>
+        <span class="fete-value">Vendredi 31 juillet 2026<small>À partir de 19h00</small></span>
       </div>
       <div class="fete-detail">
         <span class="fete-label">Où</span>
-        <span class="fete-value"><a href="https://www.lexamango.fr/" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#d4a84a">Le Xamango</a><small>lexamango.fr</small></span>
+        <span class="fete-value">Le restaurant du mariage<small>Adresse à confirmer · Ville</small></span>
       </div>
       <div class="fete-detail">
         <span class="fete-label">Programme</span>
@@ -285,7 +285,7 @@
   <div class="section-inner">
     <p class="section-eyebrow">Merci de répondre avant le 1er mai 2026</p>
     <h2 class="section-title">Confirmez votre présence</h2>
-    <form class="rsvp-form" name="rsvp" method="POST" data-netlify="true" action="/rsvp-merci">
+    <form class="rsvp-form" name="rsvp" method="POST" data-netlify="true" onsubmit="submitRSVP(event)">
       <input type="hidden" name="form-name" value="rsvp"/>
       <div class="form-row">
         <label>Votre nom complet</label>
@@ -428,7 +428,7 @@
 
 <script>
   // COUNTDOWN
-  const target = new Date('2026-07-29T19:00:00').getTime();
+  const target = new Date('2026-07-31T19:00:00').getTime();
   function updateCountdown() {
     const now = Date.now();
     const diff = target - now;
@@ -448,7 +448,12 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // RSVP handled natively by Netlify
+  // RSVP
+  function submitRSVP(e) {
+    e.preventDefault();
+    e.target.style.display = 'none';
+    document.getElementById('rsvp-success').classList.add('show');
+  }
 
   // MESSAGES
   function addMessage(e) {
